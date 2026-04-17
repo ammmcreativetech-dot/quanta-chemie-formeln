@@ -1,206 +1,382 @@
 [
   {
-    "slug": "gibbs-energie",
-    "name": "Gibbs-Energie",
-    "symbol": "ΔG = ΔH − TΔS",
-    "latex": "\\Delta G = \\Delta H - T \\Delta S",
+    "slug": "ideales-gasgesetz",
+    "name": "Ideales Gasgesetz",
+    "latex": "p \\cdot V = n \\cdot R \\cdot T",
+    "symbol": "pV = nRT",
     "kategorie": "chemie",
-    "unterkategorie": "Thermodynamik",
-    "beschreibung": "Die Gibbs-Energie (freie Enthalpie) bestimmt die Spontaneität einer chemischen Reaktion. Ist ΔG < 0 läuft die Reaktion freiwillig ab.",
-    "einheiten": "ΔG, ΔH in [kJ/mol], T in Kelvin [K], ΔS in [J/(mol·K)]",
+    "unterkategorie": "Thermodynamik / Gase",
+    "beschreibung": "Das ideale Gasgesetz verbindet Druck, Volumen, Stoffmenge und Temperatur eines idealen Gases.",
+    "einheiten": "p in Pa · V in m³ · n in mol · R = 8,314 J/(mol·K) · T in K",
     "variablen": [
-      { "symbol": "ΔG", "bedeutung": "Änderung der Gibbs-Energie (freie Enthalpie)", "einheit": "kJ/mol" },
-      { "symbol": "ΔH", "bedeutung": "Änderung der Enthalpie (Reaktionswärme)", "einheit": "kJ/mol" },
-      { "symbol": "T", "bedeutung": "Absolute Temperatur", "einheit": "K" },
-      { "symbol": "ΔS", "bedeutung": "Änderung der Entropie", "einheit": "J/(mol·K)" }
+      {
+        "symbol": "p",
+        "bedeutung": "Druck",
+        "einheit": "Pa (Pascal)"
+      },
+      {
+        "symbol": "V",
+        "bedeutung": "Volumen",
+        "einheit": "m³ oder L"
+      },
+      {
+        "symbol": "n",
+        "bedeutung": "Stoffmenge",
+        "einheit": "mol"
+      },
+      {
+        "symbol": "R",
+        "bedeutung": "Universelle Gaskonstante (8,314)",
+        "einheit": "J/(mol·K)"
+      },
+      {
+        "symbol": "T",
+        "bedeutung": "Temperatur (in Kelvin!)",
+        "einheit": "K"
+      }
     ],
-    "hintergrund": "Josiah Willard Gibbs entwickelte 1873–78 die freie Enthalpie als thermodynamisches Potential für Prozesse bei konstantem Druck und Temperatur. Sie vereint Enthalpie- und Entropieeffekte.",
-    "beispiel": "Verbrennung von Glucose: ΔH = −2803 kJ/mol, ΔS = +182 J/(mol·K), T = 298 K: ΔG = −2803 − 298×0,182 = −2857 kJ/mol → spontan.",
-    "anwendung": "Beurteilung chemischer Reaktionen, Elektrochemie (ΔG = −nFE°), Biochemie (ATP-Synthese), Materialwissenschaft",
-    "quellen": ["Atkins, P. & de Paula, J. (2014). Physical Chemistry.", "Stryer, L. et al. (2019). Biochemistry."],
-    "verwandte": ["nernst-gleichung", "clausius-clapeyron"],
+    "hintergrund": "Synthese aus Boyle-Mariotte-Gesetz (pV = const.), Gay-Lussac-Gesetz (V/T = const.) und Avogadro-Gesetz (V ∝ n). Gilt exakt nur für ideale Gase (keine Wechselwirkungen, punktförmige Teilchen).",
+    "beispiel": "5 mol N₂ bei T = 300 K und p = 1 atm = 101.325 Pa: V = nRT/p = 5 × 8,314 × 300 / 101.325 ≈ 0,123 m³ = 123 L.",
+    "anwendung": "Luftfahrt (Druckkabinen), Tauchen (Druckausgleich), Chemische Reaktoren, Atemgasgemische",
+    "quellen": [
+      "Atkins, P., & de Paula, J. (2018). Physical Chemistry. Oxford University Press."
+    ],
+    "verwandte": [
+      "avogadro-konstante",
+      "arrhenius-gleichung",
+      "van-der-waals"
+    ],
+    "abiturRelevant": true,
+    "schwierigkeit": "grundlegend"
+  },
+  {
+    "slug": "arrhenius-gleichung",
+    "name": "Arrhenius-Gleichung",
+    "latex": "k = A \\cdot e^{-E_A / (R \\cdot T)}",
+    "symbol": "k = A·e^(−EA/RT)",
+    "kategorie": "chemie",
+    "unterkategorie": "Reaktionskinetik",
+    "beschreibung": "Die Arrhenius-Gleichung beschreibt die Temperaturabhängigkeit der Geschwindigkeitskonstante einer chemischen Reaktion.",
+    "einheiten": "k in s⁻¹ (oder mol⁻¹·L·s⁻¹) · A = Frequenzfaktor · E_A in J/mol · R = 8,314 J/(mol·K) · T in K",
+    "variablen": [
+      {
+        "symbol": "k",
+        "bedeutung": "Geschwindigkeitskonstante",
+        "einheit": "mol⁻¹·L·s⁻¹ o.ä."
+      },
+      {
+        "symbol": "A",
+        "bedeutung": "Präexponentieller Faktor (Frequenzfaktor)",
+        "einheit": "gleiche Einheit wie k"
+      },
+      {
+        "symbol": "E_A",
+        "bedeutung": "Aktivierungsenergie",
+        "einheit": "J/mol"
+      },
+      {
+        "symbol": "R",
+        "bedeutung": "Gaskonstante (8,314)",
+        "einheit": "J/(mol·K)"
+      },
+      {
+        "symbol": "T",
+        "bedeutung": "Temperatur",
+        "einheit": "K"
+      }
+    ],
+    "hintergrund": "Svante Arrhenius formulierte 1889 die Gleichung auf Basis empirischer Beobachtungen. Die RGT-Regel (Reaktionsgeschwindigkeit-Temperatur) besagt näherungsweise: +10 K verdoppelt die Reaktionsgeschwindigkeit. Die Aktivierungsenergie ist die Energieschranke, die überwunden werden muss.",
+    "beispiel": "Reaktion mit E_A = 50 kJ/mol bei T₁ = 300 K und T₂ = 310 K: k₂/k₁ = e^(50000/8,314 × (1/300 − 1/310)) ≈ 1,9 → ca. Verdopplung.",
+    "anwendung": "Chemische Verfahrenstechnik, Lebensmittelkonservierung (Kühlung), Pharmazie (Haltbarkeit), Geologie (Altersbestimmung)",
+    "quellen": [
+      "Arrhenius, S. (1889). Über die Reaktionsgeschwindigkeit bei der Inversion von Rohrzucker durch Säuren. Zeitschrift für physikalische Chemie."
+    ],
+    "verwandte": [
+      "ideales-gasgesetz",
+      "gibbs-energie",
+      "gleichgewichtskonstante"
+    ],
+    "abiturRelevant": true,
     "schwierigkeit": "fortgeschritten"
   },
   {
     "slug": "henderson-hasselbalch",
     "name": "Henderson-Hasselbalch-Gleichung",
+    "latex": "pH = pK_a + \\log \\frac{[A^-]}{[HA]}",
     "symbol": "pH = pKa + log([A⁻]/[HA])",
-    "latex": "\\text{pH} = \\text{p}K_a + \\log\\frac{[A^-]}{[HA]}",
     "kategorie": "chemie",
     "unterkategorie": "Säure-Base-Chemie",
-    "beschreibung": "Die Henderson-Hasselbalch-Gleichung berechnet den pH-Wert einer Pufferlösung aus dem pKa der schwachen Säure und dem Konzentrationsverhältnis von Base zu Säure.",
-    "einheiten": "pH dimensionslos, pKa = −log(Ka), [A⁻] und [HA] in mol/L",
+    "beschreibung": "Die Henderson-Hasselbalch-Gleichung berechnet den pH-Wert von Pufferlösungen aus dem pKa der Säure und dem Konzentrationsverhältnis.",
+    "einheiten": "pH dimensionslos · pKa dimensionslos · Konzentrationen in mol/L",
     "variablen": [
-      { "symbol": "pH", "bedeutung": "Negativer dekadischer Logarithmus der H⁺-Konzentration", "einheit": "dimensionslos" },
-      { "symbol": "pKa", "bedeutung": "Negativer dekadischer Logarithmus der Säurekonstante Ka", "einheit": "dimensionslos" },
-      { "symbol": "[A⁻]", "bedeutung": "Konzentration der konjugierten Base", "einheit": "mol/L" },
-      { "symbol": "[HA]", "bedeutung": "Konzentration der schwachen Säure", "einheit": "mol/L" }
+      {
+        "symbol": "pH",
+        "bedeutung": "Negativer dekadischer Logarithmus der H⁺-Konzentration",
+        "einheit": "dimensionslos"
+      },
+      {
+        "symbol": "pKa",
+        "bedeutung": "Negativer Logarithmus der Säurekonstante",
+        "einheit": "dimensionslos"
+      },
+      {
+        "symbol": "[A⁻]",
+        "bedeutung": "Konzentration der konjugierten Base",
+        "einheit": "mol/L"
+      },
+      {
+        "symbol": "[HA]",
+        "bedeutung": "Konzentration der schwachen Säure",
+        "einheit": "mol/L"
+      }
     ],
-    "hintergrund": "Lawrence Henderson (1908) und Karl Albert Hasselbalch (1909) leiteten die Gleichung unabhängig voneinander ab. Sie ist fundamental in der Biochemie und Medizin für das Verständnis des Blut-pH-Systems.",
-    "beispiel": "Essigsäure/Acetat-Puffer (pKa = 4,76): bei [A⁻] = [HA] → pH = 4,76 + log(1) = 4,76. Bei [A⁻]/[HA] = 10 → pH = 4,76 + 1 = 5,76.",
-    "anwendung": "Pufferlösungen im Labor, Blut-pH-Regulation (HCO₃⁻/CO₂, pKa=6,1), Pharmazie (Medikamentenlöslichkeit), Lebensmittelchemie",
-    "quellen": ["Henderson, L.J. (1908). Concerning the relationship between the strength of acids and their capacity to preserve neutrality. Am. J. Physiol.", "Nelson & Cox (2021). Lehninger Principles of Biochemistry."],
-    "verwandte": ["nernst-gleichung", "gibbs-energie"],
+    "hintergrund": "Abgeleitet aus der Massenwirkung für schwache Säuren: Ka = [H⁺][A⁻]/[HA] → [H⁺] = Ka × [HA]/[A⁻] → pH = pKa + log([A⁻]/[HA]).",
+    "beispiel": "Essigsäure-Puffer (pKa = 4,75), [CH₃COO⁻] = 0,1 mol/L, [CH₃COOH] = 0,05 mol/L: pH = 4,75 + log(0,1/0,05) = 4,75 + 0,30 = 5,05.",
+    "anwendung": "Biochemie (Blutpuffer pH 7,4), Pharmazie (Formulierungen), Analytische Chemie, Lebensmittelchemie",
+    "quellen": [
+      "Henderson, L.J. (1908). The theory of neutrality regulation in the animal organism. American Journal of Physiology."
+    ],
+    "verwandte": [
+      "ideales-gasgesetz",
+      "arrhenius-gleichung",
+      "gibbs-energie"
+    ],
+    "abiturRelevant": true,
     "schwierigkeit": "fortgeschritten"
   },
   {
     "slug": "nernst-gleichung",
     "name": "Nernst-Gleichung",
-    "symbol": "E = E° − (RT/nF)·ln Q",
-    "latex": "E = E^0 - \\frac{RT}{nF} \\ln Q",
+    "latex": "E = E^0 - \\frac{RT}{zF} \\ln Q",
+    "symbol": "E = E° − (RT/zF)·ln Q",
     "kategorie": "chemie",
     "unterkategorie": "Elektrochemie",
-    "beschreibung": "Die Nernst-Gleichung berechnet das Zellpotential E einer elektrochemischen Reaktion unter Nicht-Standardbedingungen in Abhängigkeit von der Reaktionsquotienten Q.",
-    "einheiten": "E, E° in Volt [V], R = 8,314 J/(mol·K), T in [K], n = Elektronenzahl, F = 96.485 C/mol",
+    "beschreibung": "Die Nernst-Gleichung beschreibt das Elektrodenpotential in Abhängigkeit von Temperatur und Konzentration.",
+    "einheiten": "E in V · R = 8,314 J/(mol·K) · T in K · z = Zahl übertragener Elektronen · F = 96.485 C/mol",
     "variablen": [
-      { "symbol": "E", "bedeutung": "Elektrodenpotential unter Messbedingungen", "einheit": "V" },
-      { "symbol": "E°", "bedeutung": "Standardelektrodenpotential", "einheit": "V" },
-      { "symbol": "R", "bedeutung": "Universelle Gaskonstante", "einheit": "8,314 J/(mol·K)" },
-      { "symbol": "T", "bedeutung": "Temperatur", "einheit": "K" },
-      { "symbol": "n", "bedeutung": "Anzahl übertragener Elektronen", "einheit": "dimensionslos" },
-      { "symbol": "F", "bedeutung": "Faraday-Konstante", "einheit": "96.485 C/mol" },
-      { "symbol": "Q", "bedeutung": "Reaktionsquotient", "einheit": "dimensionslos" }
+      {
+        "symbol": "E",
+        "bedeutung": "Elektrodenpotential",
+        "einheit": "V"
+      },
+      {
+        "symbol": "E°",
+        "bedeutung": "Standardelektrodenpotential",
+        "einheit": "V"
+      },
+      {
+        "symbol": "R",
+        "bedeutung": "Gaskonstante",
+        "einheit": "J/(mol·K)"
+      },
+      {
+        "symbol": "T",
+        "bedeutung": "Temperatur",
+        "einheit": "K"
+      },
+      {
+        "symbol": "z",
+        "bedeutung": "Zahl der übertragenen Elektronen",
+        "einheit": "dimensionslos"
+      },
+      {
+        "symbol": "F",
+        "bedeutung": "Faraday-Konstante (96.485 C/mol)",
+        "einheit": "C/mol"
+      },
+      {
+        "symbol": "Q",
+        "bedeutung": "Reaktionsquotient",
+        "einheit": "dimensionslos"
+      }
     ],
-    "hintergrund": "Walther Nernst entwickelte 1889 diese Gleichung. Sie verbindet Thermodynamik mit Elektrochemie und ist fundamental für das Verständnis von Batterien und Membranpotentialen.",
-    "beispiel": "Zink/Kupfer-Daniell-Element, E° = +1,10 V, 298 K, n=2, Q=0,01: E = 1,10 − (8,314×298)/(2×96485) × ln(0,01) = 1,10 + 0,059 = 1,16 V.",
-    "anwendung": "Elektrochemische Zellen, Batterien, Membranpotentiale (Nervenzelle: Nernst-Gleichung für Na⁺/K⁺), pH-Elektroden",
-    "quellen": ["Nernst, W. (1889). Die elektromotorische Wirksamkeit der Ionen. Z. Physik. Chem.", "Atkins, P. & de Paula, J. (2014). Physical Chemistry."],
-    "verwandte": ["gibbs-energie", "henderson-hasselbalch", "faradaysches-gesetz"],
+    "hintergrund": "Walther Nernst leitete die Gleichung 1889 aus thermodynamischen Prinzipien ab. Bei 25°C vereinfacht: E = E° − (0,0592/z)·log Q.",
+    "beispiel": "Cu²⁺/Cu-Elektrode (E° = +0,34 V), [Cu²⁺] = 0,01 mol/L, T = 298 K, z = 2: E = 0,34 − (0,0296)·log(1/0,01) = 0,34 − 0,0592 = 0,28 V.",
+    "anwendung": "Batterietechnik (Li-Ion), Brennstoffzellen, Korrosionsschutz, Biosensoren (Blutglukose)",
+    "quellen": [
+      "Nernst, W. (1889). Die elektromotorische Wirksamkeit der Jonen. Zeitschrift für Physikalische Chemie."
+    ],
+    "verwandte": [
+      "gibbs-energie",
+      "gleichgewichtskonstante",
+      "faraday-elektrolyse"
+    ],
+    "abiturRelevant": true,
     "schwierigkeit": "universitaet"
   },
   {
-    "slug": "arrhenius-gleichung",
-    "name": "Arrhenius-Gleichung",
-    "symbol": "k = A·e^(−Ea/RT)",
-    "latex": "k = A \\cdot e^{-\\frac{E_a}{RT}}",
+    "slug": "gibbs-energie",
+    "name": "Gibbs-Energie (Freie Enthalpie)",
+    "latex": "\\Delta G = \\Delta H - T \\cdot \\Delta S",
+    "symbol": "ΔG = ΔH − TΔS",
+    "kategorie": "chemie",
+    "unterkategorie": "Thermodynamik",
+    "beschreibung": "Die Gibbs-Energie bestimmt die Spontaneität chemischer Reaktionen: ΔG < 0 → spontan, ΔG > 0 → nicht spontan.",
+    "einheiten": "G, H, S·T alle in kJ/mol · T in K · S in J/(mol·K)",
+    "variablen": [
+      {
+        "symbol": "ΔG",
+        "bedeutung": "Änderung der freien Enthalpie",
+        "einheit": "kJ/mol"
+      },
+      {
+        "symbol": "ΔH",
+        "bedeutung": "Änderung der Enthalpie (Wärme)",
+        "einheit": "kJ/mol"
+      },
+      {
+        "symbol": "T",
+        "bedeutung": "Temperatur",
+        "einheit": "K"
+      },
+      {
+        "symbol": "ΔS",
+        "bedeutung": "Änderung der Entropie",
+        "einheit": "J/(mol·K)"
+      }
+    ],
+    "hintergrund": "Josiah Willard Gibbs entwickelte 1876 die thermodynamische Potentialfunktion. ΔG° = −RT·ln K verknüpft Thermodynamik mit Gleichgewichtskonstante. ATP-Hydrolyse in Zellen: ΔG° = −30,5 kJ/mol (exergon).",
+    "beispiel": "Kompromisskompromisslose Reaktion: ΔH = −100 kJ/mol (exotherm), ΔS = +200 J/(mol·K). Bei T = 500 K: ΔG = −100.000 − 500×200 = −200 kJ/mol → spontan.",
+    "anwendung": "Biochemie (ATP-Zyklus), Metallurgie (Verhüttung), Batterietechnik, Chemische Produktion",
+    "quellen": [
+      "Gibbs, J.W. (1876). On the Equilibrium of Heterogeneous Substances. Trans. Connecticut Academy."
+    ],
+    "verwandte": [
+      "arrhenius-gleichung",
+      "nernst-gleichung",
+      "gleichgewichtskonstante"
+    ],
+    "abiturRelevant": true,
+    "schwierigkeit": "universitaet"
+  },
+  {
+    "slug": "massenwirkungsgesetz",
+    "name": "Massenwirkungsgesetz (Gleichgewichtskonstante)",
+    "latex": "K_c = \\frac{[C]^c \\cdot [D]^d}{[A]^a \\cdot [B]^b}",
+    "symbol": "Kc = [C]ᶜ·[D]ᵈ / ([A]ᵃ·[B]ᵇ)",
     "kategorie": "chemie",
     "unterkategorie": "Reaktionskinetik",
-    "beschreibung": "Die Arrhenius-Gleichung beschreibt die Temperaturabhängigkeit einer Reaktionsgeschwindigkeitskonstante k. Sie zeigt, dass Reaktionen bei höherer Temperatur schneller ablaufen.",
-    "einheiten": "k in [1/s] (Einheit abhängig von Reaktionsordnung), A = präexponentieller Faktor, Ea in [J/mol], R = 8,314 J/(mol·K), T in [K]",
+    "beschreibung": "Das Massenwirkungsgesetz (MWG) beschreibt das chemische Gleichgewicht: Das stöchiometrisch gewichtete Verhältnis der Gleichgewichtskonzentrationen von Produkten zu Edukten ist konstant.",
+    "einheiten": "Kc dimensionslos (Konzentrationen in mol/L)",
     "variablen": [
-      { "symbol": "k", "bedeutung": "Reaktionsgeschwindigkeitskonstante", "einheit": "1/s (1. Ordnung)" },
-      { "symbol": "A", "bedeutung": "Präexponentieller Faktor (Frequenzfaktor)", "einheit": "gleich wie k" },
-      { "symbol": "Ea", "bedeutung": "Aktivierungsenergie", "einheit": "J/mol" },
-      { "symbol": "R", "bedeutung": "Gaskonstante", "einheit": "8,314 J/(mol·K)" },
-      { "symbol": "T", "bedeutung": "Absolute Temperatur", "einheit": "K" }
+      {
+        "symbol": "Kc",
+        "bedeutung": "Gleichgewichtskonstante (konzentrationsbezogen)",
+        "einheit": "dimensionslos"
+      },
+      {
+        "symbol": "[C],[D]",
+        "bedeutung": "Gleichgewichtskonzentrationen der Produkte",
+        "einheit": "mol/L"
+      },
+      {
+        "symbol": "[A],[B]",
+        "bedeutung": "Gleichgewichtskonzentrationen der Edukte",
+        "einheit": "mol/L"
+      },
+      {
+        "symbol": "a,b,c,d",
+        "bedeutung": "Stöchiometrische Koeffizienten",
+        "einheit": "dimensionslos"
+      }
     ],
-    "hintergrund": "Svante Arrhenius formulierte 1889 die Gleichung basierend auf empirischen Beobachtungen und van't Hoffs Theorie. Sie ist das wichtigste Werkzeug der Reaktionskinetik.",
-    "beispiel": "Reaktion mit Ea = 50 kJ/mol, bei T₁=298 K und T₂=308 K (10°C Erhöhung): k₂/k₁ = e^(−50000/R × (1/308−1/298)) ≈ 1,87 → fast doppelte Geschwindigkeit ('RGT-Regel').",
-    "anwendung": "Chemische Industrie (Reaktordesign), Lebensmittelhaltbarkeit, Pharmakologie (Stabilitätsstudien), Korrosionsschutz",
-    "quellen": ["Arrhenius, S. (1889). Über die Reaktionsgeschwindigkeit bei der Inversion von Rohrzucker durch Säuren. Z. Physik. Chem.", "Atkins, P. & de Paula, J. (2014). Physical Chemistry."],
-    "verwandte": ["gibbs-energie"],
+    "hintergrund": "Guldberg & Waage (1864) formulierten das MWG. Kc >> 1: Gleichgewicht auf Produktseite. Kc << 1: Gleichgewicht auf Eduktseite. Le-Chatelier-Prinzip: Konzentrations-, Druck- oder Temperaturänderung verschiebt das Gleichgewicht kompensatorisch.",
+    "beispiel": "N₂ + 3H₂ ⇌ 2NH₃. Bei [N₂] = 0,5, [H₂] = 0,5, [NH₃] = 0,1 mol/L: Kc = (0,1)² / (0,5·(0,5)³) = 0,01/0,0625 = 0,16.",
+    "anwendung": "Haber-Bosch-Verfahren (NH₃-Synthese), Säure-Base-Gleichgewichte, Pufferberechnung, Löslichkeitsprodukt",
+    "quellen": [
+      "Guldberg, C.M. & Waage, P. (1864). Studier over Affiniteten. Christiania."
+    ],
+    "verwandte": [
+      "henderson-hasselbalch",
+      "nernst-gleichung",
+      "gibbs-energie"
+    ],
+    "abiturRelevant": false,
     "schwierigkeit": "fortgeschritten"
   },
   {
-    "slug": "beer-lambert-gesetz",
-    "name": "Beer-Lambert-Gesetz",
-    "symbol": "A = ε·c·d",
-    "latex": "A = \\varepsilon \\cdot c \\cdot d",
+    "slug": "ph-definition",
+    "name": "pH-Wert-Definition",
+    "latex": "pH = -\\lg([\\text{H}_3\\text{O}^+])",
+    "symbol": "pH = −lg[H₃O⁺]",
     "kategorie": "chemie",
-    "unterkategorie": "Spektroskopie",
-    "beschreibung": "Die Absorption A von Licht beim Durchgang durch eine Lösung ist proportional zum molaren Extinktionskoeffizienten ε, der Konzentration c und der Schichtdicke d.",
-    "einheiten": "A dimensionslos (log I₀/I), ε in [L/(mol·cm)], c in [mol/L], d in [cm]",
+    "unterkategorie": "Säure-Base",
+    "beschreibung": "Der pH-Wert ist der negative dekadische Logarithmus der Hydronium-Ionen-Konzentration — die universelle Skala für Säure und Base in der Chemie.",
+    "einheiten": "pH dimensionslos, [H₃O⁺] in mol/L",
     "variablen": [
-      { "symbol": "A", "bedeutung": "Extinktion (Absorbanz)", "einheit": "dimensionslos" },
-      { "symbol": "ε", "bedeutung": "Molarer Extinktionskoeffizient", "einheit": "L/(mol·cm)" },
-      { "symbol": "c", "bedeutung": "Konzentration der absorbierenden Substanz", "einheit": "mol/L" },
-      { "symbol": "d", "bedeutung": "Schichtdicke der Küvette", "einheit": "cm" }
+      {
+        "symbol": "pH",
+        "bedeutung": "Negativer dekadischer Logarithmus der H₃O⁺-Konzentration",
+        "einheit": "dimensionslos"
+      },
+      {
+        "symbol": "[H₃O⁺]",
+        "bedeutung": "Hydronium-Ionen-Konzentration",
+        "einheit": "mol/L"
+      },
+      {
+        "symbol": "pOH",
+        "bedeutung": "Negativer Logarithmus der OH⁻-Konzentration; pH + pOH = 14",
+        "einheit": "dimensionslos"
+      }
     ],
-    "hintergrund": "August Beer (1852) und Johann Heinrich Lambert (1760) entwickelten das Gesetz unabhängig. Es ist die Grundlage der Photometrie und Spektroskopie.",
-    "beispiel": "Protein-Lösung (ε=6,67×10⁴ L/(mol·cm)), d=1 cm, A=0,5: c = A/(ε×d) = 0,5/(6,67×10⁴×1) = 7,5×10⁻⁶ mol/L = 7,5 μM.",
-    "anwendung": "Konzentrationsbestimmung (Protein-Assays, DNA-Quantifizierung), Qualitätskontrolle, Medizin (Hb-Bestimmung im Blut), Umweltanalytik",
-    "quellen": ["Beer, A. (1852). Bestimmung der Absorption des rothen Lichts in farbigen Flüssigkeiten. Annalen der Physik.", "Harris, D.C. (2010). Quantitative Chemical Analysis."],
-    "verwandte": ["arrhenius-gleichung"],
-    "schwierigkeit": "fortgeschritten"
-  },
-  {
-    "slug": "van-der-waals-gleichung",
-    "name": "Van-der-Waals-Gleichung",
-    "symbol": "(p + a/V²)(V − b) = RT",
-    "latex": "\\left(p + \\frac{a}{V_m^2}\\right)(V_m - b) = RT",
-    "kategorie": "chemie",
-    "unterkategorie": "Thermodynamik",
-    "beschreibung": "Die Van-der-Waals-Gleichung ist eine verbesserte Zustandsgleichung gegenüber dem idealen Gasgesetz: Sie berücksichtigt intermolekulare Anziehungskräfte (a) und das Eigenvolumen der Moleküle (b).",
-    "einheiten": "p in [Pa], Vm in [m³/mol], R = 8,314 J/(mol·K), T in [K], a in [Pa·m⁶/mol²], b in [m³/mol]",
-    "variablen": [
-      { "symbol": "p", "bedeutung": "Druck", "einheit": "Pa" },
-      { "symbol": "Vm", "bedeutung": "Molares Volumen", "einheit": "m³/mol" },
-      { "symbol": "a", "bedeutung": "Van-der-Waals-Konstante (Wechselwirkung)", "einheit": "Pa·m⁶/mol²" },
-      { "symbol": "b", "bedeutung": "Van-der-Waals-Konstante (Eigenvolumen)", "einheit": "m³/mol" },
-      { "symbol": "R", "bedeutung": "Gaskonstante", "einheit": "8,314 J/(mol·K)" },
-      { "symbol": "T", "bedeutung": "Temperatur", "einheit": "K" }
+    "hintergrund": "Søren Sørensen (1909) führte den pH-Wert ein. Bei 25 °C: pH + pOH = 14 (Ionenprodukt des Wassers Kw = 10⁻¹⁴). pH < 7: sauer, pH = 7: neutral, pH > 7: basisch. Für starke Säuren: pH = −lg(c).",
+    "beispiel": "0,01 mol/L HCl (vollständig dissoziiert): [H₃O⁺] = 0,01 mol/L. pH = −lg(0,01) = −lg(10⁻²) = 2. Cola: pH ≈ 2,5 · Blut: pH = 7,4.",
+    "anwendung": "Biochemie (Enzymoptima), Medizin (Blut-pH), Lebensmitteltechnologie, Wasseraufbereitung, Analytische Chemie",
+    "quellen": [
+      "Sørensen, S.P.L. (1909). Enzymstudien. Biochemische Zeitschrift, 21, 131–304."
     ],
-    "hintergrund": "Johannes Diderik van der Waals stellte die Gleichung 1873 in seiner Dissertation auf und erhielt dafür 1910 den Nobelpreis. Sie erklärt erstmals die Verflüssigung von Gasen.",
-    "beispiel": "CO₂: a = 0,3658 Pa·m⁶/mol², b = 42,9×10⁻⁶ m³/mol. Bei 300 K und Vm = 1 L/mol: p(van der Waals) vs. p(ideal) zeigt deutliche Abweichung bei hohem Druck.",
-    "anwendung": "Hochdruckprozesse in der chemischen Industrie, Verflüssigung von Gasen (Stickstoff, Sauerstoff), Medizin (Narkosegase), Kryotechnik",
-    "quellen": ["van der Waals, J.D. (1873). Over de continuiteit van den gas- en vloeistoftoestand. Dissertation, Leiden.", "Atkins, P. & de Paula, J. (2014). Physical Chemistry."],
-    "verwandte": ["gibbs-energie", "arrhenius-gleichung"],
-    "schwierigkeit": "universitaet"
-  },
-  {
-    "slug": "hess-satz",
-    "name": "Hess'scher Satz",
-    "symbol": "ΔH_ges = ΣΔH_i",
-    "latex": "\\Delta H_{ges} = \\sum_i \\Delta H_i",
-    "kategorie": "chemie",
-    "unterkategorie": "Thermodynamik",
-    "beschreibung": "Die Reaktionsenthalpie ist unabhängig vom Reaktionsweg. Die Gesamtenthalpieänderung ist gleich der Summe der Enthalpieänderungen der Teilreaktionen.",
-    "einheiten": "ΔH in [kJ/mol]",
-    "variablen": [
-      { "symbol": "ΔH_ges", "bedeutung": "Gesamte Reaktionsenthalpie", "einheit": "kJ/mol" },
-      { "symbol": "ΔH_i", "bedeutung": "Enthalpie der i-ten Teilreaktion", "einheit": "kJ/mol" }
+    "verwandte": [
+      "henderson-hasselbalch",
+      "massenwirkungsgesetz",
+      "nernst-gleichung"
     ],
-    "hintergrund": "Germain Henri Hess formulierte 1840 diesen Satz, der eine direkte Folge des ersten Hauptsatzes der Thermodynamik ist. Er ermöglicht die Berechnung von Reaktionsenthalpien für nicht direkt messbare Reaktionen.",
-    "beispiel": "Bildung von CO₂: C + ½O₂ → CO (ΔH₁=−110,5 kJ/mol) + CO + ½O₂ → CO₂ (ΔH₂=−283,0 kJ/mol) → ΔH_ges = −393,5 kJ/mol.",
-    "anwendung": "Berechnung von Standardbildungsenthalpien, Verbrennungskalorimetrie, Ingenieurwesen (Reaktorauslegung)",
-    "quellen": ["Hess, G.H. (1840). Thermochemische Untersuchungen. Annalen der Physik.", "Atkins, P. & de Paula, J. (2014). Physical Chemistry."],
-    "verwandte": ["gibbs-energie", "clausius-clapeyron"],
+    "abiturRelevant": false,
     "schwierigkeit": "grundlegend"
   },
   {
-    "slug": "faradaysches-gesetz",
-    "name": "Faradaysches Gesetz der Elektrolyse",
-    "symbol": "m = M·I·t/(n·F)",
-    "latex": "m = \\frac{M \\cdot I \\cdot t}{n \\cdot F}",
+    "slug": "lambert-beer-gesetz",
+    "name": "Lambert-Beersches Gesetz (Photometrie)",
+    "latex": "A = \\varepsilon \\cdot c \\cdot d",
+    "symbol": "A = ε·c·d",
     "kategorie": "chemie",
-    "unterkategorie": "Elektrochemie",
-    "beschreibung": "Die bei der Elektrolyse abgeschiedene Masse m ist proportional zur Ladungsmenge (I·t) und zur molaren Masse M des abgeschiedenen Stoffs, und umgekehrt proportional zur Ionenwertigkeit n.",
-    "einheiten": "m in [g], M in [g/mol], I in Ampere [A], t in Sekunden [s], n = Oxidationsstufe, F = 96.485 C/mol",
+    "unterkategorie": "Spektroskopie",
+    "beschreibung": "Das Lambert-Beer-Gesetz verknüpft die Extinktion (Absorbanz) einer Lösung mit ihrer Konzentration und Schichtdicke — Grundlage der UV/Vis-Spektroskopie und quantitativen Analytik.",
+    "einheiten": "A dimensionslos, ε in L·mol⁻¹·cm⁻¹, c in mol/L, d in cm",
     "variablen": [
-      { "symbol": "m", "bedeutung": "Abgeschiedene Masse", "einheit": "g" },
-      { "symbol": "M", "bedeutung": "Molare Masse des Stoffs", "einheit": "g/mol" },
-      { "symbol": "I", "bedeutung": "Stromstärke", "einheit": "A" },
-      { "symbol": "t", "bedeutung": "Elektrolysedauer", "einheit": "s" },
-      { "symbol": "n", "bedeutung": "Ladungszahl des Ions", "einheit": "dimensionslos" },
-      { "symbol": "F", "bedeutung": "Faraday-Konstante", "einheit": "96.485 C/mol" }
+      {
+        "symbol": "A",
+        "bedeutung": "Extinktion (Absorbanz) = lg(I₀/I)",
+        "einheit": "dimensionslos"
+      },
+      {
+        "symbol": "ε",
+        "bedeutung": "Molarer dekadischer Extinktionskoeffizient (stoffspezifisch)",
+        "einheit": "L·mol⁻¹·cm⁻¹"
+      },
+      {
+        "symbol": "c",
+        "bedeutung": "Molare Konzentration des absorbierenden Stoffs",
+        "einheit": "mol/L"
+      },
+      {
+        "symbol": "d",
+        "bedeutung": "Schichtdicke der Küvette",
+        "einheit": "cm"
+      }
     ],
-    "hintergrund": "Michael Faraday entdeckte 1833 die quantitative Beziehung zwischen Elektrizität und chemischer Umwandlung. Die Faraday-Konstante F wurde nach ihm benannt.",
-    "beispiel": "Kupfer-Elektrolyse (M=63,5 g/mol, n=2) mit I=2 A für t=3600 s: m = (63,5×2×3600)/(2×96485) ≈ 2,37 g Cu abgeschieden.",
-    "anwendung": "Galvanik (Vergoldung, Verchromung), Aluminium-Produktion, Chlor-Alkali-Elektrolyse, Akkumulatoren",
-    "quellen": ["Faraday, M. (1833). Experimental Researches in Electricity. Philosophical Transactions.", "Atkins, P. & de Paula, J. (2014). Physical Chemistry."],
-    "verwandte": ["nernst-gleichung", "gibbs-energie"],
+    "hintergrund": "Johann Lambert (1760) und August Beer (1852) formulierten das Gesetz unabhängig. Gültig im linearen Bereich (A < 1,0). Abweichungen bei hohen Konzentrationen. ELISA, HPLC-Detektion und Glukose-Sensoren basieren darauf.",
+    "beispiel": "Protein (ε = 40 000 L·mol⁻¹·cm⁻¹), Küvette d = 1 cm, c = 10⁻⁵ mol/L: A = 40 000 · 10⁻⁵ · 1 = 0,40. Transmission: T = 10⁻⁰·⁴⁰ ≈ 40 %.",
+    "anwendung": "UV/Vis-Spektroskopie, Proteinkonzentrationsbestimmung (BCA, Bradford), ELISA, Enzymassays, Wasseranalytik",
+    "quellen": [
+      "Beer, A. (1852). Bestimmung der Absorption des rothen Lichts in farbigen Flüssigkeiten. Annalen der Physik, 162, 78–88."
+    ],
+    "verwandte": [
+      "arrhenius-gleichung",
+      "nernst-gleichung",
+      "massenwirkungsgesetz"
+    ],
+    "abiturRelevant": false,
     "schwierigkeit": "fortgeschritten"
-  },
-  {
-    "slug": "clausius-clapeyron",
-    "name": "Clausius-Clapeyron-Gleichung",
-    "symbol": "d ln p/dT = ΔH_vap/RT²",
-    "latex": "\\frac{d\\ln p}{dT} = \\frac{\\Delta H_{vap}}{RT^2}",
-    "kategorie": "chemie",
-    "unterkategorie": "Thermodynamik",
-    "beschreibung": "Die Clausius-Clapeyron-Gleichung beschreibt, wie der Dampfdruck einer Flüssigkeit mit der Temperatur ansteigt, in Abhängigkeit von der Verdampfungsenthalpie ΔH_vap.",
-    "einheiten": "p in [Pa] oder [bar], T in [K], ΔH_vap in [J/mol], R = 8,314 J/(mol·K)",
-    "variablen": [
-      { "symbol": "p", "bedeutung": "Dampfdruck", "einheit": "Pa" },
-      { "symbol": "T", "bedeutung": "Temperatur", "einheit": "K" },
-      { "symbol": "ΔH_vap", "bedeutung": "Verdampfungsenthalpie", "einheit": "J/mol" },
-      { "symbol": "R", "bedeutung": "Gaskonstante", "einheit": "8,314 J/(mol·K)" }
-    ],
-    "hintergrund": "Rudolf Clausius und Benoît Paul Émile Clapeyron entwickelten die Gleichung Mitte des 19. Jahrhunderts. In integrierter Form: ln(p₂/p₁) = −ΔH_vap/R × (1/T₂ − 1/T₁).",
-    "beispiel": "Wasser: ΔH_vap=40,7 kJ/mol. Dampfdruck bei 100°C=1 atm. Bei 80°C: ln(p₂/1) = −(40700/8,314)×(1/353−1/373) = −40700×0,0001527/8,314 ≈ −0,747 → p₂ ≈ 0,47 atm.",
-    "anwendung": "Destillation, Freeze-Drying, Meteorologie (Luftfeuchte), Chemische Verfahrenstechnik, Kochpunkt-Bestimmung",
-    "quellen": ["Clapeyron, E. (1834). Mémoire sur la puissance motrice de la chaleur. Journal de l'École Polytechnique.", "Atkins, P. & de Paula, J. (2014). Physical Chemistry."],
-    "verwandte": ["gibbs-energie", "hess-satz"],
-    "schwierigkeit": "universitaet"
   }
 ]
