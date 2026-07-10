@@ -1,7 +1,7 @@
 {
   "name": "quanta-chemie-formeln",
-  "version": "1.0.1",
-  "description": "9 wissenschaftlich aufbereitete Chemie-Formeln für Studium und Universität — Thermodynamik (Gibbs-Energie), Elektrochemie (Nernst-Gleichung), Säure-Base (Henderson-Hasselbalch), Kinetik (Arrhenius), Spektroskopie (Beer-Lambert). Mit LaTeX, Variablen, Herleitung. Von Quanta (quanta-study.de).",
+  "version": "2.0.0",
+  "description": "24 wissenschaftlich aufbereitete Chemie-Formeln für Abitur, Studium und Universität — Thermodynamik, Elektrochemie, Säure-Base, Reaktionskinetik, Stöchiometrie, Spektroskopie, chemisches Gleichgewicht. Mit LaTeX, Variablen, Herleitung, Umstellungen und typischen Fehlern. Von Quanta (quanta-study.de).",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
