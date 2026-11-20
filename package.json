@@ -1,47 +1,44 @@
 {
   "name": "quanta-chemie-formeln",
-  "version": "2.0.0",
-  "description": "24 wissenschaftlich aufbereitete Chemie-Formeln für Abitur, Studium und Universität — Thermodynamik, Elektrochemie, Säure-Base, Reaktionskinetik, Stöchiometrie, Spektroskopie, chemisches Gleichgewicht. Mit LaTeX, Variablen, Herleitung, Umstellungen und typischen Fehlern. Von Quanta (quanta-study.de).",
+  "version": "3.0.0",
+  "description": "Compact German chemie formula reference data with LaTeX, variable metadata, source references and TypeScript helpers.",
+  "private": false,
+  "type": "commonjs",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
+    "formeln.json",
     "index.js",
     "index.d.ts",
-    "formeln.json"
+    "schema.json",
+    "README.md",
+    "CITATION.cff",
+    "LICENSE",
+    "LICENSE-SCOPE.md",
+    "CHANGELOG.md",
+    "manifest.json",
+    "test"
   ],
   "scripts": {
-    "test": "node -e \"const f = require('.'); console.log('✅', f.formeln.length, 'Chemie-Formeln geladen');\""
+    "test": "node --test test/contract.test.cjs"
   },
   "keywords": [
-    "chemie",
-    "chemie-formeln",
-    "chemistry",
-    "thermodynamik",
-    "elektrochemie",
-    "saeure-base",
-    "kinetik",
-    "gibbs",
-    "nernst",
-    "henderson-hasselbalch",
-    "arrhenius",
-    "beer-lambert",
+    "dataset",
+    "formula",
     "latex",
-    "mint",
-    "studium",
-    "university",
-    "biochemie",
-    "organische-chemie",
-    "fsrs",
-    "quanta",
-    "education",
-    "germany"
+    "chemie",
+    "typescript",
+    "quanta-study"
   ],
-  "author": "Quanta <ammm.creativetech@gmail.com> (https://quanta-study.de)",
+  "author": {
+    "name": "Quanta Study / AM Creative Tech UG (haftungsbeschränkt)",
+    "url": "https://quanta-study.de/"
+  },
   "license": "CC-BY-4.0",
-  "homepage": "https://quanta-study.de/chemie-lernen",
+  "homepage": "https://quanta-study.de/tafelwerk",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ammmcreativetech-dot/quanta-chemie-formeln.git"
+    "url": "git+https://github.com/ammmcreativetech-dot/quanta-chemie-formeln.git"
   },
   "bugs": {
     "url": "https://github.com/ammmcreativetech-dot/quanta-chemie-formeln/issues"
